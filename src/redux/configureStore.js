@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import missionsSlice from './missions/missions';
+import missionReducer from './missions/missions';
 
 const store = configureStore({
-  reducer: missionsSlice,
+  reducer: missionReducer,
 });
 
 export default store;

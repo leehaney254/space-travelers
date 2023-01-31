@@ -3,14 +3,23 @@ import { useEffect } from 'react';
 import { fetchMissions } from '../redux/missions/missions';
 
 const Missions = () => {
-  const user = useSelector((state) => state.missionSlice);
+  const mission = useSelector((state) => state);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchMissions());
-  });
-  console.log(user);
+  }, [dispatch]);
+
   return (
-    <h1>This is the Missions.</h1>
+    <>
+      <h1>Missions</h1>
+      {mission.loading && <h1>loading....</h1>}
+      {mission.loading && mission.error ? (
+        <div>
+          Error:
+          {mission.error}
+        </div>
+      ) : null}
+    </>
   );
 };
 

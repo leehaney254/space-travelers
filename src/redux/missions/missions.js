@@ -3,8 +3,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const initialState = {
-  loading: false,
-  users: [],
+  loading: true,
+  missions: [],
   error: '',
 };
 
@@ -12,24 +12,30 @@ const fetchMissions = createAsyncThunk('user/fetchUsers', () => axios.get('https
   .then((res) => res.data));
 
 const missionsSlice = createSlice({
-  name: 'user',
+  name: 'mission',
   initialState,
+  reducers: {
+    storeMission: (state, payload) => {
+      state.missions = payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchMissions.pending, (state) => {
       state.loading = true;
     });
     builder.addCase(fetchMissions.fulfilled, (state, action) => {
       state.loading = false;
-      state.users = action.payload;
+      state.missions = action.payload;
       state.error = '';
     });
     builder.addCase(fetchMissions.rejected, (state, action) => {
       state.loading = false;
-      state.users = [];
+      state.missions = [];
       state.error = action.error.message;
     });
   },
 });
 
-export default missionsSlice;
+export default missionsSlice.reducer;
+export const { storeMission } = missionsSlice.actions;
 export { fetchMissions };
