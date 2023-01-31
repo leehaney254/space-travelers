@@ -8,7 +8,7 @@ const Missions = () => {
   useEffect(() => {
     dispatch(fetchMissions());
   });
-
+  console.log(user);
   return (
     <h1>This is the Missions.</h1>
   );
