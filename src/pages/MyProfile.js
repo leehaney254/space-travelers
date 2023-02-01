@@ -5,6 +5,9 @@ const MyProfile = () => {
   const profilemission = useSelector((state) => state.mission);
   const display = profilemission.missions.filter((mission) => mission.reserved === true);
 
+  const profileRockets = useSelector((state) => state.rockets);
+  const displayRockets = profileRockets.filter((rocket) => rocket.reserved === true);
+
   return (
     <main id="profileSpace">
       <aside>
@@ -23,9 +26,11 @@ const MyProfile = () => {
         <h2>My Rockets</h2>
         <Table bordered hover>
           <tbody>
-            <tr>
-              <td> Falcon 9</td>
-            </tr>
+            {displayRockets.map((rocket) => (
+              <tr key={rocket.id}>
+                <td>{rocket.name}</td>
+              </tr>
+            ))}
           </tbody>
         </Table>
       </aside>
