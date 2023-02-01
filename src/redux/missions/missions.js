@@ -40,10 +40,6 @@ const missionsSlice = createSlice({
       });
       return { ...state, missions: newState };
     },
-    joinedMissions: (state) => {
-      const newState = state.missions.filter((mission) => mission.reserved === true);
-      return newState;
-    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchMissions.pending, (state) => {
@@ -63,5 +59,5 @@ const missionsSlice = createSlice({
 });
 
 export default missionsSlice.reducer;
-export const { joinMission, leaveMission } = missionsSlice.actions;
+export const { joinMission, leaveMission, joinedMissions } = missionsSlice.actions;
 export { fetchMissions };
