@@ -5,8 +5,9 @@ import { useSelector } from 'react-redux';
 const MissionTable = () => {
   const table = useSelector((state) => state);
 
-  const joinMissionHandler = () => {
-    console.log('Join Mission Clicked');
+  const joinMissionHandler = (e) => {
+    const { target: { id } } = e;
+    console.log(id);
   };
 
   return (
