@@ -29,9 +29,8 @@ const MissionTable = () => {
             <td>
               <Stack direction="horizontal" gap={3}>
                 <Button variant="secondary">Not A Member</Button>
-                {' '}
-                <Button id={mission.id} onClick={joinMissionHandler} variant="light">Join Mission</Button>
-                {' '}
+                {!mission.reserved ? (<Button id={mission.id} onClick={joinMissionHandler} variant="light">Join Mission</Button>
+                ) : (<Button variant="danger">Danger</Button>)}
               </Stack>
             </td>
           </tr>

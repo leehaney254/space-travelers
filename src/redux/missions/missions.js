@@ -10,7 +10,12 @@ const initialState = {
 
 const fetchMissions = createAsyncThunk('user/fetchUsers', () => axios.get('https://api.spacexdata.com/v3/missions')
   .then((res) => res.data.map((mission) => (
-    { id: mission.mission_id, name: mission.mission_name, descrption: mission.description }
+    {
+      id: mission.mission_id,
+      name: mission.mission_name,
+      descrption: mission.description,
+      reserved: false,
+    }
   ))));
 
 const missionsSlice = createSlice({
