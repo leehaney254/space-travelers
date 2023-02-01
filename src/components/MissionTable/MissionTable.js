@@ -5,6 +5,10 @@ import { useSelector } from 'react-redux';
 const MissionTable = () => {
   const table = useSelector((state) => state);
 
+  const joinMissionHandler = () => {
+    console.log('Join Mission Clicked');
+  };
+
   return (
     <Table striped bordered hover id="tablespace">
       <thead>
@@ -23,7 +27,7 @@ const MissionTable = () => {
               <Stack direction="horizontal" gap={3}>
                 <Button variant="secondary">Not A Member</Button>
                 {' '}
-                <Button variant="light">Join Mission</Button>
+                <Button id={mission.id} onClick={joinMissionHandler} variant="light">Join Mission</Button>
                 {' '}
               </Stack>
             </td>
