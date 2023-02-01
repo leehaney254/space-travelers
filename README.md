@@ -60,9 +60,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
-
-- [Live Demo Link](https://space-travelers-hub-fvaz.onrender.com/missions)
+- [Live Demo Link](https://space-travelers-hub-fvaz.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
