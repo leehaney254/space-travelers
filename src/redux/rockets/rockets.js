@@ -27,12 +27,12 @@ const rocketSlice = createSlice({
     },
     unreserveRocket(state, action) {
       return state.map((rocket) => {
-        if(rocket.id !== action.payload) {
+        if (rocket.id !== action.payload) {
           return { ...rocket };
         }
-        return {...rocket, reserved: false}
-      })
-    }
+        return { ...rocket, reserved: false };
+      });
+    },
   },
   extraReducers(builder) {
     builder.addCase(rocketsAction.fulfilled, (state, action) => {

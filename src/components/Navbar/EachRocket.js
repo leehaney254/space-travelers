@@ -6,7 +6,7 @@ import { reserveRocket, unreserveRocket } from '../../redux/rockets/rockets';
 const EachRocket = (props) => {
   const dispatch = useDispatch();
   const {
-    name, description, image, reserved, id 
+    name, description, image, reserved, id,
   } = props;
 
   return (
