@@ -1,12 +1,12 @@
 import { useSelector } from 'react-redux';
 import MissionTable from '../components/MissionTable/MissionTable';
+import './Mission.css';
 
 const Missions = () => {
   const mission = useSelector((state) => state);
 
   return (
-    <>
-      <h1>Missions</h1>
+    <div id="spacing">
       {mission.loading && <h1>loading....</h1>}
       {!mission.loading && mission.error ? (
         <div>
@@ -14,9 +14,8 @@ const Missions = () => {
           {mission.error}
         </div>
       ) : null}
-      <MissionTable />
-      {!mission.loading && mission.length ? <MissionTable /> : null}
-    </>
+      {!mission.loading && mission.missions.length ? <MissionTable /> : null}
+    </div>
   );
 };
 
