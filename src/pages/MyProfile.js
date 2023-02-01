@@ -2,7 +2,7 @@ import Table from 'react-bootstrap/Table';
 import { useSelector } from 'react-redux';
 
 const MyProfile = () => {
-  const profilemission = useSelector((state) => state);
+  const profilemission = useSelector((state) => state.mission);
   const display = profilemission.missions.filter((mission) => mission.reserved === true);
 
   return (
