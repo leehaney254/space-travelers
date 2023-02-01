@@ -49,10 +49,20 @@
 
 .reserveRocketButton {
   cursor: pointer;
-  padding: 12px;
+  padding: 10px;
   border-radius: 3px;
   background-color: #0290ff;
   border: none;
   letter-spacing: 0.5px;
   color: #fff;
+}
+
+.unreserveRocketButton {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px solid #333;
+  letter-spacing: 0.5px;
+  color: #333;
 }
