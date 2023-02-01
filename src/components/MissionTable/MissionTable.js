@@ -1,9 +1,16 @@
 import Table from 'react-bootstrap/Table';
 import { Button, Stack } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { joiMission } from '../../redux/missions/missions';
 
 const MissionTable = () => {
   const table = useSelector((state) => state);
+  const dispatch = useDispatch();
+
+  const joinMissionHandler = (e) => {
+    const { target: { id } } = e;
+    dispatch(joiMission(id));
+  };
 
   return (
     <Table striped bordered hover id="tablespace">
@@ -23,7 +30,7 @@ const MissionTable = () => {
               <Stack direction="horizontal" gap={3}>
                 <Button variant="secondary">Not A Member</Button>
                 {' '}
-                <Button variant="light">Join Mission</Button>
+                <Button id={mission.id} onClick={joinMissionHandler} variant="light">Join Mission</Button>
                 {' '}
               </Stack>
             </td>
