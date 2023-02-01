@@ -26,12 +26,12 @@ const missionsSlice = createSlice({
       });
       return { ...state, missions: newState };
     },
-    joiMission: (state, id) => {
+    leaveMission: (state, id) => {
       const newState = state.missions.map((mission) => {
         if (mission.id !== id.payload) {
           return mission;
         }
-        return { ...mission, reserved: true };
+        return { ...mission, reserved: false };
       });
       return { ...state, missions: newState };
     },
