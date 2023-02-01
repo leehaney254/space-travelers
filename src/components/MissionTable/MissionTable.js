@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { joinMission, leaveMission } from '../../redux/missions/missions';
 
 const MissionTable = () => {
-  const table = useSelector((state) => state);
+  const table = useSelector((state) => state.mission);
   const dispatch = useDispatch();
 
   const joinMissionHandler = (e) => {
