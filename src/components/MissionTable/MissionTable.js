@@ -1,7 +1,7 @@
 import Table from 'react-bootstrap/Table';
 import { Button, Stack } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { joinMission } from '../../redux/missions/missions';
+import { joinMission, leaveMission } from '../../redux/missions/missions';
 
 const MissionTable = () => {
   const table = useSelector((state) => state);
@@ -10,6 +10,11 @@ const MissionTable = () => {
   const joinMissionHandler = (e) => {
     const { target: { id } } = e;
     dispatch(joinMission(id));
+  };
+
+  const leaveMissionHandler = (e) => {
+    const { target: { id } } = e;
+    dispatch(leaveMission(id));
   };
 
   return (
@@ -30,7 +35,7 @@ const MissionTable = () => {
               <Stack direction="horizontal" gap={3}>
                 <Button variant="secondary">Not A Member</Button>
                 {!mission.reserved ? (<Button id={mission.id} onClick={joinMissionHandler} variant="light">Join Mission</Button>
-                ) : (<Button variant="danger">Danger</Button>)}
+                ) : (<Button id={mission.id} onClick={leaveMissionHandler} variant="danger">Danger</Button>)}
               </Stack>
             </td>
           </tr>
