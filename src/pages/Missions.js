@@ -3,7 +3,7 @@ import MissionTable from '../components/MissionTable/MissionTable';
 import './Mission.css';
 
 const Missions = () => {
-  const mission = useSelector((state) => state);
+  const mission = useSelector((state) => state.mission);
 
   return (
     <div id="spacing">
