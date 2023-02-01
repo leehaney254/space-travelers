@@ -35,7 +35,7 @@ const MissionTable = () => {
               <Stack direction="horizontal" gap={3}>
                 <Button variant="secondary">Not A Member</Button>
                 {!mission.reserved ? (<Button id={mission.id} onClick={joinMissionHandler} variant="light">Join Mission</Button>
-                ) : (<Button id={mission.id} onClick={leaveMissionHandler} variant="danger">Danger</Button>)}
+                ) : (<Button id={mission.id} onClick={leaveMissionHandler} variant="danger">Leave Mission</Button>)}
               </Stack>
             </td>
           </tr>
