@@ -1,13 +1,15 @@
 import Table from 'react-bootstrap/Table';
 import { Button, Stack } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { joiMission } from '../../redux/missions/missions';
 
 const MissionTable = () => {
   const table = useSelector((state) => state);
+  const dispatch = useDispatch();
 
   const joinMissionHandler = (e) => {
     const { target: { id } } = e;
-    console.log(id);
+    dispatch(joiMission(id));
   };
 
   return (
