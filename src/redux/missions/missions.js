@@ -17,6 +17,15 @@ const missionsSlice = createSlice({
   name: 'mission',
   initialState,
   reducers: {
+    joinMission: (state, id) => {
+      const newState = state.missions.map((mission) => {
+        if (mission.id !== id.payload) {
+          return mission;
+        }
+        return { ...mission, reserved: true };
+      });
+      return { ...state, missions: newState };
+    },
     joiMission: (state, id) => {
       const newState = state.missions.map((mission) => {
         if (mission.id !== id.payload) {
@@ -45,5 +54,5 @@ const missionsSlice = createSlice({
 });
 
 export default missionsSlice.reducer;
-export const { joiMission } = missionsSlice.actions;
+export const { joinMission } = missionsSlice.actions;
 export { fetchMissions };
