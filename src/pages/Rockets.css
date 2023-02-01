@@ -1,0 +1,58 @@
+.rocketsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.rocketsUl {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin: 0;
+  padding: 40px;
+}
+
+.rocketsLi {
+  display: flex;
+  gap: 40px;
+}
+
+.eachRocketImage {
+  width: 250px;
+  height: 200px;
+  background-color: #ec5242;
+}
+
+.eachRocketImage img {
+  margin: auto;
+  width: 250px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.eachRocketTitle {
+  margin: 0 0 15px 0;
+}
+
+.isReserved {
+  background-color: #18a2b8;
+  padding: 2px;
+  border-radius: 3px;
+  color: #fff;
+  margin: 0 10px 0 0;
+}
+
+.eachRocketTexts {
+  margin: 0 0 20px 0;
+}
+
+.reserveRocketButton {
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 3px;
+  background-color: #0290ff;
+  border: none;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
