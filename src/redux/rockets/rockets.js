@@ -42,7 +42,7 @@ const rocketSlice = createSlice({
           id: key[1].id,
           name: key[1].rocket_name,
           description: key[1].description,
-          flickr_images: key[1].flickr_images[1],
+          flickr_images: key[1].flickr_images[0],
           reserved: false,
         });
       });
