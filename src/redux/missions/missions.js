@@ -1,6 +1,5 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 
 const initialState = {
   loading: false,
@@ -8,15 +7,14 @@ const initialState = {
   error: '',
 };
 
-const fetchMissions = createAsyncThunk('user/fetchUsers', () => axios.get('https://api.spacexdata.com/v3/missions')
-  .then((res) => res.data.map((mission) => (
-    {
-      id: mission.mission_id,
-      name: mission.mission_name,
-      descrption: mission.description,
-      reserved: false,
-    }
-  ))));
+const fetchMissions = createAsyncThunk('user/fetchUsers', () => fetch('https://api.spacexdata.com/v3/missions')
+  .then((res) => res.json())
+  .then((data) => data.map((mission) => ({
+    id: mission.mission_id,
+    name: mission.mission_name,
+    descrption: mission.description,
+    reserved: false,
+  }))));
 
 const missionsSlice = createSlice({
   name: 'mission',

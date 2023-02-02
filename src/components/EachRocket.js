@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { reserveRocket, unreserveRocket } from '../../redux/rockets/rockets';
+import { reserveRocket, unreserveRocket } from '../redux/rockets/rockets';
 
 const EachRocket = (props) => {
   const dispatch = useDispatch();
