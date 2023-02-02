@@ -7,7 +7,7 @@ const NavBar = () => (
     <nav id="nav">
       <div id="logo">
         <img id="imagesize" src={planet} alt="App Logo" />
-        <p>Space Travelers&apos; Hub</p>
+        <p id="logowords">Space Travelers&apos; Hub</p>
       </div>
       <ul id="navlinks">
         <li><NavLink className={({ isActive }) => (isActive ? 'active' : 'navlink')} to="/">Rockets</NavLink></li>

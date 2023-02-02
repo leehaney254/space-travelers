@@ -1,0 +1,9 @@
+.profmission {
+  width: 45%;
+}
+
+#profileSpace {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem;
+}

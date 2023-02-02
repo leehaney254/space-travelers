@@ -1,5 +1,6 @@
 import Table from 'react-bootstrap/Table';
 import { useSelector } from 'react-redux';
+import './MyProfile.css';
 
 const MyProfile = () => {
   const profilemission = useSelector((state) => state.mission);
@@ -10,7 +11,7 @@ const MyProfile = () => {
 
   return (
     <main id="profileSpace">
-      <aside>
+      <aside className="profmission">
         <h2>My Missions</h2>
         <Table bordered hover>
           <tbody>
@@ -22,7 +23,7 @@ const MyProfile = () => {
           </tbody>
         </Table>
       </aside>
-      <aside>
+      <aside className="profmission">
         <h2>My Rockets</h2>
         <Table bordered hover>
           <tbody>
