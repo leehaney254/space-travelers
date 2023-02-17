@@ -37,10 +37,12 @@
 
 .isReserved {
   background-color: #18a2b8;
-  padding: 2px;
+  padding: 5px;
   border-radius: 3px;
   color: #fff;
   margin: 0 10px 0 0;
+  text-align: center;
+  font-size: 12px;
 }
 
 .eachRocketTexts {
